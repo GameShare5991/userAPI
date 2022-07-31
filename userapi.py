@@ -46,9 +46,9 @@ def create_user():
 
     time = dt.datetime.now()
     user_data = {
-        form[field] for field in required_fields
+        field: form[field] for field in required_fields
     } | {
-        form.get(field, None) for field in optional_fields
+        field: form.get(field, None) for field in optional_fields
     }
 
     _, doc = db.collection('users').add(user_data)  # initial data
@@ -68,9 +68,9 @@ def update_user():
 
     time = dt.datetime.now()
     user_data = {
-        form[field] for field in required_fields
+        field: form[field] for field in required_fields
     } | {
-        form.get(field, None) for field in optional_fields
+        field: form.get(field, None) for field in optional_fields
     }
 
     db.collection('users').document(form["uid"]).set(user_data | {"updateDate": time})
