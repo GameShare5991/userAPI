@@ -52,7 +52,7 @@ def create_user():
     }
 
     _, doc = db.collection('users').add(user_data)  # initial data
-    db.collection('users').document(doc.id).set({  # document-related data
+    db.collection('users').document(doc.id).update({  # document-related data
         "uid": doc.id,
         "createDate": time,
         "updateDate": time
@@ -73,7 +73,7 @@ def update_user():
         field: form.get(field, None) for field in optional_fields
     }
 
-    db.collection('users').document(form["uid"]).set(user_data | {"updateDate": time})
+    db.collection('users').document(form["uid"]).update(user_data | {"updateDate": time})
     return "User successfully updated", 200
 
 
