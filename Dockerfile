@@ -2,7 +2,7 @@ FROM python:3
 
 WORKDIR /app
 
-ADD userAPI.py .
+ADD userapi.py .
 ADD userJSON .
 ADD serviceAccountKey.json .
 
