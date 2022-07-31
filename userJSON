@@ -1,0 +1,11 @@
+{
+    "uid": "string",
+    "firstName": "string",
+    "lastName": "string",
+    "bio": "string"
+    "consoles": ["string"]
+    "sales": ["string"]
+    "rentals": ["string"]
+    "createDate": "date-time"
+    "updateDate": "date-time"
+}
